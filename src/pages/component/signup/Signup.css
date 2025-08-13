@@ -1,0 +1,31 @@
+.signup-container{
+    width: 98.5vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.signup-div{
+    width: 350px;
+    height: 380px;
+    background-color: gray;
+    border: 1px solid black;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: left;
+    padding: 20px 20px 20px 20px;
+}
+.signup-div p{
+    font-size: 12px;
+}
+.signup-form .ant-form-item{
+    /* padding: 5px; */
+    margin-bottom: 10px;
+    /* background-color: green; */
+}
+.signup-form .ant-form-item-label{
+    padding: 0px;
+    margin-top: 5px;
+}

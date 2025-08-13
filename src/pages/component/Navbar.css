@@ -1,0 +1,194 @@
+
+
+/* ------------------------------ */
+/* 🔽 RESPONSIVE MEDIA QUERIES 🔽 */
+/* ------------------------------ */
+
+/* @media (max-width: 1024px) {
+  .navbar_container {
+    padding-left: 40px;
+    padding-right: 20px;
+  }
+
+  .navbar_container ul {
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .company_heading {
+    flex-grow: 1;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .login_btn {
+    margin-right: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar_container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20px;
+    padding-right: 20px;
+    gap: 10px;
+  }
+
+  .navbar_container ul {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .navbar_container ul li {
+    width: 100%;
+    text-align: left;
+    padding: 8px 0;
+  }
+
+  .company_heading {
+    text-align: left;
+    font-size: 16px;
+    width: 100%;
+  }
+
+  .search_box {
+    width: 100%;
+  }
+
+  .login_btn {
+    align-self: flex-end;
+    margin-right: 0;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar_container {
+    padding: 10px;
+  }
+
+  .company_heading {
+    font-size: 14px;
+  }
+
+  .form-last div {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .login_btn {
+    font-size: 14px;
+  }
+} */
+
+
+
+
+
+.navbar_container {
+  display: flex;
+  padding: 10px 20px;
+  padding-left: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: background-color 0.3s ease-in-out, padding 0.3s ease-in-out;
+  background-color: transparent;
+}
+.sticky-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 1;
+}
+.light-header {
+  background: rgb(228, 218, 218);
+  box-shadow: 0 2px 5px rgba(240, 237, 237, 0.829);
+  z-index: 999;
+}
+.dark-header {
+  background-color: #160a0adc;
+  box-shadow: 0 2px 5px rgba(8, 8, 8, 0.623);
+  z-index: 999;
+}
+.navbar_container ul {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  width: 100%;
+}
+.navbar_container ul li {
+  margin: 5px;
+  font-size: 14px;
+  padding-left: 5px;
+  padding-right: 5px;
+  flex-grow: 0.5;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: 500;
+}
+.nav_item {
+  padding: 10px 0px;
+  text-shadow: 5cm;
+}
+.dark-nav:hover {
+  background-color: rgb(12, 11, 11);
+  cursor: pointer;
+}
+.light-nav:hover {
+  background-color: rgb(238, 228, 228);
+  cursor: pointer;
+}
+.nav_item.active a {
+  font-weight: bold;
+  border-bottom: 2px solid #007bff;
+  color: #007bff;
+  text-decoration: none;
+}
+.company_heading {
+  font-size: 18px !important;
+  flex-grow: 6 !important;
+  text-align: left !important;
+  font-weight: 800;
+}
+.custom-search  {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.company_heading:hover {
+  background-color: transparent;
+}
+
+.login_btn {
+  color: #fff;
+  padding-right: 20px !important;
+  margin-right: 20px;
+}
+.login-modal .ant-modal-footer {
+  display: none;
+}
+.login-modal .ant-form-item {
+  margin-bottom: 6px;
+}
+.navbar_container a {
+  text-decoration: none;
+  color: inherit;
+}
+.form-last div {
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+  align-items: center;
+}
+.form-last div p {
+  font-size: 12px;
+  font-weight: 400;
+}
+.form_label label{
+  font-weight: 300;
+  font-size: 14px;
+}

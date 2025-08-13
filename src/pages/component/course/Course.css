@@ -1,0 +1,39 @@
+.course_container{
+    width: 100%;
+    padding-left: 100px;
+    padding-right: 75px;
+    display: flex;
+   align-items: center;
+    margin-top: 120px;
+    gap: 30px;
+    flex-direction: column;
+    margin-bottom: 45px;
+}
+.course_container h2 span{
+    color: rgb(206, 11, 43);
+    font-family: 700;
+}
+.course_container p {
+    font-size: 14px;
+    text-align: center;
+    font-weight: 200;
+}
+.button_btn {
+    background-color: rgb(97, 4, 20);
+    color: white;
+}
+.button_btn:hover {
+    background-color: rgb(221, 28, 60) !important;
+    /* background-color: rgb(97, 4, 20) !important; */
+    color: white;
+}
+.freebook-container{
+     width: 100%;
+    padding-left: 80px;
+    padding-right: 30px;
+    margin-bottom: 80px;
+}
+.freeBook-card-container{
+    width: 100%;
+}
+
