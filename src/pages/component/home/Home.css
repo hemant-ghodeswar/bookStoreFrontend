@@ -1,0 +1,58 @@
+.home_container{
+    width: 100%;
+    padding-left: 100px;
+    padding-right: 25px;
+    display: flex;
+    /* justify-content: center; */
+    margin-top: 120px;
+    gap: 30px;
+}
+.home-left-side{
+    /* display: flex; */
+    width: 50%;
+    /* background-color: antiquewhite; */
+    padding-top: 10px;
+    flex-direction: column;
+}
+.home-left-side h1{
+    line-height: 40px;
+}
+.home-left-side h1 span{
+    color: peru;
+}
+.home-left-side p{
+    margin-top: 15px;
+    line-height: 30px;
+    
+}
+.home-left-side Button{
+    margin-top: 15px;
+    line-height: 20px;
+    
+}
+.homeLeftSideInputDiv{
+    margin-top: 25px;
+    /* line-height: 20px; */
+    
+}
+.free_offered_courses_div{
+    width: 100%;
+    padding-left: 100px;
+    margin-top: 20px;
+    padding-right: 50px;
+}
+.free_offered_courses_div p{
+    margin-top: 10px;
+    line-height: 25px;
+}
+.home-right-side{
+    /* border: 1px solid black; */
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    padding-top: 0px;
+}
+.homePage_image{
+    width: 400px;
+
+}
