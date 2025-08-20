@@ -7,12 +7,14 @@ import Card from "../../common/card/Card";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Course = () => {
   const [filteredBooks, setFilteredBooks] = useState([]);
   useEffect(() => {
-    const courseBook = list.filter((data) => data.category !== "Free");
-    setFilteredBooks(courseBook);
+    // const courseBook = list.filter((data) => data.category !== "Free");
+    // setFilteredBooks(courseBook);
+    getAllBooks();
   }, []);
   var settings = {
     dots: true,
@@ -48,7 +50,14 @@ const Course = () => {
       },
     ],
   };
-
+  const getAllBooks = async () => {
+    try {
+      const res = await axios.get("http://localhost:4001/book/");
+      setFilteredBooks(res.data);
+    } catch (error) {
+      console.log("Error:", error);
+    }
+  };
   return (
     <div className="course_container">
       <h2>
@@ -62,14 +71,14 @@ const Course = () => {
         clean background, suitable for an online bookstore.
       </p>
       <Link to="/">
-      <Button className="button_btn">Back</Button>
+        <Button className="button_btn">Back</Button>
       </Link>
-      
+
       <div className="freeBook-card-container">
         <div className="slider-container">
           <Slider {...settings}>
             {filteredBooks?.map((item, index) => (
-              <Card item={item} key={item.id} />
+              <Card item={item} key={item._id} />
             ))}
           </Slider>
         </div>
