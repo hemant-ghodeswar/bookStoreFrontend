@@ -1,31 +1,33 @@
 import React, { useEffect, useState } from "react";
 import "./FreeBooks.css";
-import list from "../../../assets/list.json";
+// import list from "../../../assets/list.json";
 import { Carousel } from "antd";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Card from "../../common/card/Card";
+import axios from "axios";
 
 const contentStyle = {
   margin: 0,
-  height: '160px',
-  color: '#fff',
-  lineHeight: '160px',
-  textAlign: 'center',
-  background: '#364d79',
+  height: "160px",
+  color: "#fff",
+  lineHeight: "160px",
+  textAlign: "center",
+  background: "#364d79",
 };
 
 const FreeBooks = () => {
   const [filteredBooks, setFilteredBooks] = useState([]);
-    useEffect(() => {
-    const freeBooks = list.filter((data) => data.category === "Free");
-    setFilteredBooks(freeBooks);
+  useEffect(() => {
+    // const freeBooks = list.filter((data) => data.category === "Free");
+    // setFilteredBooks(freeBooks);
+    getFreeBooks();
   }, []);
-  const onChangeCarousel = currentSlide => {
+  const onChangeCarousel = (currentSlide) => {
     console.log(currentSlide);
   };
-   var settings = {
+  var settings = {
     dots: true,
     infinite: false,
     speed: 500,
@@ -39,25 +41,34 @@ const FreeBooks = () => {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-          dots: true
-        }
+          dots: true,
+        },
       },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          initialSlide: 2
-        }
+          initialSlide: 2,
+        },
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+  const getFreeBooks = async () => {
+    try {
+      const res = await axios.get("http://localhost:4001/book/");
+      const freeBookData = res.data.filter((data) => data.category === "Free");
+      setFilteredBooks(freeBookData);
+    } catch (err) {
+      console.log("Error :", err);
+    }
   };
   return (
     <div className="freebook-container">
@@ -71,14 +82,12 @@ const FreeBooks = () => {
       </p>
       <div className="freeBook-card-container">
         <div className="slider-container">
-      <Slider {...settings}>
-
-            {filteredBooks?.map((item, index)=>(
-                <Card item={item} key={item.id}/>
+          <Slider {...settings}>
+            {filteredBooks?.map((item, index) => (
+              <Card item={item} key={item._id} />
             ))}
-
-      </Slider>
-    </div>
+          </Slider>
+        </div>
       </div>
     </div>
   );

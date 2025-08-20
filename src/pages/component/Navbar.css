@@ -111,7 +111,8 @@
   z-index: 999;
 }
 .dark-header {
-  background-color: #160a0adc;
+  /* background-color: #160a0adc; */
+  background-color: #1a1a1a;
   box-shadow: 0 2px 5px rgba(8, 8, 8, 0.623);
   z-index: 999;
 }
